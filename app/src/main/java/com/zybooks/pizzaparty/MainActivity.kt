@@ -24,7 +24,11 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
-
+    /**
+     * Function to compute the correct number of pizzas
+     * according to the user input
+     * and to display it on the screen
+     */
     fun calculateClick(view: View) {
 
         // Get user input from the EditText field
@@ -35,8 +39,11 @@ class MainActivity : AppCompatActivity() {
 
         // Assign the number of slices depending on how hungry the user is
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
+            //if light is pressed then 2 slices per person
             R.id.light_radio_button -> 2
+            //if medium is pressed then 3 slices per person
             R.id.medium_radio_button -> 3
+            //else if Ravenous then 4 slices per person
             else -> 4
         }
 
