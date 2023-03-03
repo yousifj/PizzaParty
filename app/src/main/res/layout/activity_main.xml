@@ -9,7 +9,9 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="@drawable/background"
     tools:context="com.zybooks.pizzaparty.MainActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
