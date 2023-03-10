@@ -9,12 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
 const val SLICES_PER_PIZZA = 8
+private const val KEY_TOTAL_PIZZAS = "totalPizzas"
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var numAttendEditText: EditText
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
+    private var totalPizzas = 0
 
     //overrides the onCreate function to add new filed to the screen
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +25,19 @@ class MainActivity : AppCompatActivity() {
         numAttendEditText = findViewById(R.id.num_attend_edit_text)
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
+
+        // Restore state
+        if (savedInstanceState != null) {
+            totalPizzas = savedInstanceState.getInt(KEY_TOTAL_PIZZAS)
+            displayTotal()
+        }
     }
+    //save state
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(KEY_TOTAL_PIZZAS, totalPizzas)
+    }
+
     /**
      * Function to compute the correct number of pizzas
      * according to the user input
@@ -48,8 +62,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         // calculates the total pizzas needed for the number of people provided
-        val totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
+        totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
         //Display the number of pizzas on the screen
+        displayTotal()
+    }
+    //Display the number of pizzas on the screen
+    private fun displayTotal() {
         numPizzasTextView.text = "Total pizzas: $totalPizzas"
     }
 }
