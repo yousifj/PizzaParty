@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
     }
     //Display the number of pizzas on the screen
     private fun displayTotal() {
-        numPizzasTextView.text = "Total pizzas: $totalPizzas"
+        val totalText = getString(R.string.total_pizzas_box_known, totalPizzas)
+        numPizzasTextView.text = totalText
     }
 }
