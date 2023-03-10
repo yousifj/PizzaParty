@@ -1,6 +1,6 @@
 <resources>
     <style name="CalcButton">
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/gray</item>
+        <item name="android:textColor">@color/red</item>
     </style>
 </resources>
