@@ -47,7 +47,10 @@ class MainActivity : AppCompatActivity() {
 
         // Get user input from the EditText field
         val numAttendStr = numAttendEditText.text.toString()
-
+        // make sure string is not empty
+        if(numAttendStr == ""){
+            return
+        }
         // Convert the input into an integer
         val numAttend = numAttendStr.toInt()
 
