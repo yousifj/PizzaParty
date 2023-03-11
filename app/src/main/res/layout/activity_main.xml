@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
+    android:paddingBottom="@dimen/padding"
+    android:paddingLeft="@dimen/padding"
+    android:paddingRight="@dimen/padding"
+    android:paddingTop="@dimen/padding"
     android:background="@drawable/background"
     tools:context="com.zybooks.pizzaparty.MainActivity">
 
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/number_of_people"
-        android:textSize="24sp"
+        android:textSize="@dimen/strings_text_size"
         android:labelFor="@id/num_attend_edit_text" />
 
     <EditText
@@ -32,9 +32,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/top_layout_margin"
         android:text="@string/hungry_level"
-        android:textSize="24sp"
+        android:textSize="@dimen/strings_text_size"
         android:labelFor="@id/hungry_radio_group" />
 
     <RadioGroup
@@ -65,15 +65,15 @@
         android:text="@string/total_pizzas_box_unknown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"/>
+        android:layout_marginTop="@dimen/top_layout_margin"
+        android:textSize="@dimen/strings_text_size"/>
 
     <Button
         android:id="@+id/calc_button"
         android:text="@string/calculate_button_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/top_layout_margin"
         android:onClick="calculateClick"
         style="@style/CalcButton" />
 </LinearLayout>

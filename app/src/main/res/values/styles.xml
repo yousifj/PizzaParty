@@ -1,7 +1,7 @@
 <resources>
     <style name="CalcButton">
         <item name="android:background">@drawable/rounded_button</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
         <item name="android:textColor">@color/red</item>
     </style>
 </resources>
